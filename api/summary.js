@@ -11,9 +11,7 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');  // Allow headers
 
     const body = req.body;
-    console.log('Body: ', body);
-    const prompt = promtGetSummary + body;
+    const prompt = promtGetSummary + (body?.messages || 'Нет сообщений.');
     const result = await model.generateContent(prompt);
-    console.log('Response: ', result.response.text());
     res.status(200).json({ message: result.response.text() });
 }
