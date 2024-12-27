@@ -1,0 +1,13 @@
+{
+  "name": "labyrinth-newsletter-ai",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rihardkrauz@gmail.com",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  }
+}
