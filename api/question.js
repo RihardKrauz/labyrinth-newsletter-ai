@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');  // Allow headers
 
     const body = req.body;
-    const prompt = `Пользователь ${body?.username || 'неизвестный'} задает вопрос: "${body?.question || 'Нет вопроса'}". Отвечай только если вопрос носит информативный характер, например запрос факта, даты, исторических данных, или базовой аналитики. Ответ должен не превышать одно предложение`;
+    const prompt = `Пользователь ${body?.username || 'неизвестный'} задает вопрос: "${body?.question || 'Нет вопроса'}". Отвечай только если вопрос носит информативный характер, например запрос факта, даты, исторических данных, или базовой аналитики. Ты можешь не отвечать, если вопрос неэтичный или оскорбительный. Ответ должен не превышать одно предложение`;
     const result = await model.generateContent(prompt);
     res.status(200).json({ message: result.response.text() });
 }
